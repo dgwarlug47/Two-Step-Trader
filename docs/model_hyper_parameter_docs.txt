@@ -1,0 +1,60 @@
+chosen_targets: when creating the loss function the model may be evaluated by all of the seq_length (chosen_targets=0), only the last label (chosen_targets=2)
+or the last few labels (chosen_targets=1).
+
+eps: entropy regularizer, the bigger its value the more the model will punish a high entropy. eps=0 has no impact.
+
+loss function: available ->  jensen_shannon_entropy, real_cross_entropy, wasserstein.
+
+num_layers: self explicative.
+
+hidden_size: for the LSTM is the hidden_size, for the berkley transformer is the d_inner, for the dual stage attention architecture it is both
+the encoder_num_hidden and the decoder_num_hidden.
+
+dropout: self_explanatory.
+
+type_net: the type of the net you want to use the available options are: 'DA, 'LSTM', 'Transformer'.
+
+distribution_name: the name of probability distribution you want to use to generate the target distributions.
+
+distribution_parameter: the parameter for the target distribution generator.
+
+n_heads: transformer hyper_parameter.
+
+d_model: transformer_hyper_parameter.
+
+d_k: transformer_hyper_parameter.
+
+d_v: transformer_hyper_parameter.
+
+input_normalization: True or False, deceding whether to tune or not tune the mean and variance of each feature.
+
+alphas: available positions.
+
+testing_benchmark: useles just set it as False.
+
+using_middle_returns: when quantizing from a bin there a two possible ways to do that, either take the middle of the bin (this variable is set to True)
+or take a random return from that bin (this variable is False).
+
+using_discretized_bins: when evaluating the model decide to evaluate the model based on the real return or a quantized return.
+
+lr: initial learning rate.
+
+optimizer_type: available -> 'Adam', 'SGD'
+
+momentum: optimizer momentum.
+
+adapatation: degree of adapatation of the optimizer.
+
+grad_clip: (no clue).
+
+epochs: self.self_explanatory.
+
+using_swag: self_explanatory.
+
+epochs_or_steps: in case the previous variable is set to be true, the this variable decides if makes the swags based on epochs (True), or optimizer steps (False).
+
+start: when to start doing the swag, note this variable is very dependent on the previous one.
+
+freq: the frequency where you update the swag (dependent on epochs_or_steps).
+
+new_lr: new learning rate schedule (in this case the only schedule we have is the SWAG.)

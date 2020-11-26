@@ -1,0 +1,4 @@
+hyper_parameter: a dictionary where the key is the name of the hyper_parameter, and the value is the value of that hyper_parameter.
+
+hyper_parameters_list is a dictionary where the key is the name of the hyper_parameter and the values are a list of which values
+that specific hyper_parameter should vary.

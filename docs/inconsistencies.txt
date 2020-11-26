@@ -1,0 +1,12 @@
+Here is some confusion with terms you may experience with this project.
+
+n_features: when you see this string it may refer to one of two things. Either the number of feature or number_features + 1. Why? Because
+the input x usually has both the labels and the features, so sometimes I will just do n_features = x.shape[2],
+the n_features = n_features + 1 in case that makes any sense.
+
+train, validation, and test: the model receives the features and labels from two addresses. the validation_tickers and the train tickers (which might be the same).
+Both of these sets will be divided according to the train_test_division. The word train will be used in two different contexts, refering to data on the train_tickers,
+or refereing to data of the first part of the division.
+
+model_hyper_parameters, data_preparation_hyper_parameters: they don't only store the hyper_parameter they also store information of the data
+that can be inferred from the hyper_parameters, for example: the number_features, remainder of test set etc....

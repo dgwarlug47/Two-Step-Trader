@@ -1,0 +1,10 @@
+trials: stands for training and evaluating with the same hyper_parameters.
+
+multiple trials: several trials changing the hyper_parameters, and then repeating with the same hyper_parameters.
+
+comments: starting with '#' refer to comments related to the dimensions of the variables, inputs of methods, what the method returns or possible commands that
+were turned off, but may be turned on later. starting with ' """ ' refer to what a method is doing at that moment.
+
+aggregates: information aggregated during the trial.
+
+cums: information accumulated from multiple trials.

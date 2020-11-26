@@ -1,0 +1,29 @@
+seq_length:  the size of the sequence of elements for both validation and training.
+
+batch_size: the size of the batch when training.
+
+device: the place in the computer where the computations will happen.
+
+train_tickers_names_file_path: this address will contain a text file with the name of the tickers you want to analyze for the training part.
+
+validaiton_tickers_names_file_path: this address will contain a text file with the name of the tickers you want to analyze for the validation part.
+
+train_tickers_base_path: this partial address concatenated with the name of a train ticker will give the address where the training information of that ticker is stored.
+
+validation_tickers_base_path: this partial address concatenated with the name of a validation ticker will give the address where the validation information of that tickers is stored.
+
+upper_bound, lower_bound, n_bins: the information of each ticker is stored in such a way that the first column is the real returns of that asset
+on that day or that period. Since we are using a probability distribution we need to transform that into a label. the way we do this is by digitizing with
+bins = np.linspace(lower_bound, upper_bound, n_bins)
+
+train_test_division: both the train set and the validation will be split into the two parts according by the train_test_division.
+
+bootstrap_ratio: if this is zero, there will be no bootstrap, in case  r > 0. then: len(bootstarped_training_set) = r * len(intial_training_set)
+
+bootstrap_seed: if you set this variable to be None, then every time you prepare the data with seed = None  the training set will be different, but if you set
+this variable to be an integer like say seed = 35, every time you run with seed =35 the bootstarped_training_set will be the same, like constant, but a constant different
+from the initial_training_set. The reason why you want this is because if we try different seeds then we might find a seed that cleans the initial training set
+into a bootstarped_training_set that makes training and generalization easier.
+
+skipping errors: one error with one trial will stop your program and finish the grid search you were doing. Setting this var as true, will help you because then
+failing one trial will not make you fail all the other trials.
